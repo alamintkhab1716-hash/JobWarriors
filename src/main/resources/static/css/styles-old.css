@@ -1,0 +1,575 @@
+/* ======================================================
+   GOOGLE FONTS
+====================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* ======================================================
+   RESET
+====================================================== */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    body{
+
+        font-family:'Inter',sans-serif;
+
+        background:linear-gradient(135deg,#EEF4FF,#F8FAFC);
+
+        overflow-x:hidden;
+
+    }
+}
+
+/* ======================================================
+   VARIABLES
+====================================================== */
+
+:root{
+
+    --primary:#2563EB;
+    --primary-dark:#1D4ED8;
+
+    --secondary:#0F172A;
+
+    --accent:#F59E0B;
+
+    --white:#ffffff;
+
+    --gray:#64748B;
+
+    --light:#F8FAFC;
+
+    --border:#E5E7EB;
+
+    --radius:16px;
+
+    --shadow:
+        0 10px 30px rgba(0,0,0,.08);
+
+    --transition:.35s ease;
+
+}
+
+/* ======================================================
+   CONTAINER
+====================================================== */
+
+.container{
+
+    width:90%;
+
+    max-width:1280px;
+
+    margin:auto;
+
+}
+
+/* ======================================================
+   NAVBAR
+====================================================== */
+
+.custom-navbar{
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    z-index:999;
+
+    background:#fff;
+
+    box-shadow:0 2px 20px rgba(0,0,0,.08);
+
+}
+
+.custom-navbar .navbar-brand{
+
+    font-size:30px;
+
+    font-weight:700;
+
+    color:var(--primary);
+
+}
+
+.custom-navbar .nav-link{
+
+    font-weight:600;
+
+    margin-left:18px;
+
+    color:#374151;
+
+    transition:.3s;
+
+}
+
+.custom-navbar .nav-link:hover{
+
+    color:var(--primary);
+
+}
+
+/* ======================================================
+   HERO
+====================================================== */
+
+.hero{
+
+    padding:140px 0 80px;
+
+    background:linear-gradient(135deg,#EEF4FF,#FFFFFF);
+
+}
+
+.hero h1{
+
+    font-size:62px;
+
+    font-weight:800;
+
+    color:var(--secondary);
+
+    line-height:1.15;
+
+}
+
+.hero h1 span{
+
+    color:var(--primary);
+
+}
+
+.hero p{
+
+    margin-top:20px;
+
+    color:#64748B;
+
+    font-size:18px;
+
+    line-height:30px;
+
+}
+
+.hero-search{
+
+    margin-top:40px;
+
+    background:#fff;
+
+    border-radius:16px;
+
+    padding:20px;
+
+    box-shadow:var(--shadow);
+
+}
+
+.hero-search input{
+
+    border:none;
+
+    outline:none;
+
+    height:55px;
+
+}
+
+.hero-search .form-control:focus{
+
+    box-shadow:none;
+
+}
+
+/* ======================================================
+   BUTTONS
+====================================================== */
+
+.btn-primary{
+
+    background:linear-gradient(90deg,#2563EB,#1D4ED8);
+
+    border:none;
+
+    transition:.35s;
+
+}
+
+.btn-primary:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 10px 25px rgba(37,99,235,.35);
+
+}
+
+
+
+.btn-outline-primary{
+
+    border-radius:12px;
+
+}
+
+/* ======================================================
+   CARD
+====================================================== */
+
+.card-ui{
+
+    background:#fff;
+
+    border-radius:18px;
+
+    padding:30px;
+
+    box-shadow:var(--shadow);
+
+    transition:.3s;
+
+    border:1px solid var(--border);
+
+}
+
+.card-ui:hover{
+
+    transform:translateY(-8px);
+
+}
+
+/* ======================================================
+   SECTION
+====================================================== */
+
+.section-title{
+
+    font-size:40px;
+
+    font-weight:700;
+
+    color:var(--secondary);
+
+}
+
+.section-subtitle{
+
+    color:#64748B;
+
+    margin-top:15px;
+
+    margin-bottom:50px;
+
+}
+
+/* ======================================================
+   FOOTER
+====================================================== */
+
+footer{
+
+    background:#0F172A;
+
+    color:#fff;
+
+    padding:60px 0;
+
+}
+
+footer a{
+
+    color:#CBD5E1;
+
+}
+
+footer a:hover{
+
+    color:white;
+
+}
+
+/* ======================================================
+   RESPONSIVE
+====================================================== */
+
+@media(max-width:992px){
+
+.hero{
+
+padding-top:120px;
+
+text-align:center;
+
+}
+
+.hero h1{
+
+font-size:42px;
+
+}
+
+.login-left{
+    background:linear-gradient(135deg,#2563EB,#1E40AF);
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:60px;
+}
+
+.login-left::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:rgba(15,23,42,.75);
+
+}
+
+.login-left>div{
+
+    position:relative;
+
+    z-index:10;
+
+}
+
+.login-card{
+
+    width:520px;
+
+    background:white;
+
+    padding:55px;
+
+    border-radius:20px;
+
+    box-shadow:0 25px 60px rgba(0,0,0,.12);
+
+}
+
+.login-card .form-control{
+
+    height:55px;
+
+    border-radius:12px;
+
+}
+
+.login-card .btn{
+
+    height:55px;
+
+    border-radius:12px;
+
+}
+.stats-box{
+
+    margin-top:60px;
+
+}
+
+.stat{
+
+    background:rgba(255,255,255,.15);
+
+    backdrop-filter:blur(8px);
+
+    border-radius:18px;
+
+    padding:20px;
+
+    margin-bottom:20px;
+
+}
+
+.stat h2{
+
+    color:white;
+
+    font-weight:700;
+
+}
+
+.stat span{
+
+    color:#E2E8F0;
+
+}
+
+.job-card{
+    background:#fff;
+    border-radius:18px;
+    padding:25px;
+    margin-bottom:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+    transition:.3s;
+    border:1px solid #edf2f7;
+}
+
+.job-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 18px 40px rgba(37,99,235,.18);
+}
+
+.job-title{
+    font-size:24px;
+    font-weight:700;
+    color:#111827;
+}
+
+.job-card .badge{
+    font-size:14px;
+    padding:8px 14px;
+    border-radius:20px;
+}
+
+.job-card button{
+    font-weight:600;
+}
+
+
+.job-card-link{
+    text-decoration:none;
+    color:inherit;
+}
+
+.job-card{
+    display:flex;
+    gap:20px;
+    align-items:center;
+    background:#fff;
+    border-radius:18px;
+    padding:25px;
+    margin-bottom:20px;
+    border:1px solid #e5e7eb;
+    transition:.3s;
+    box-shadow:0 8px 20px rgba(0,0,0,.06);
+}
+
+.job-card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 20px 40px rgba(37,99,235,.15);
+}
+
+.company-logo{
+    width:70px;
+    height:70px;
+    border-radius:16px;
+    background:#2563eb;
+    color:#fff;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:28px;
+}
+
+.job-content{
+    flex:1;
+}
+
+.job-title{
+    font-size:24px;
+    font-weight:700;
+    margin-bottom:5px;
+    color:#111827;
+}
+
+.company-name{
+    color:#2563eb;
+    font-weight:600;
+    margin-bottom:12px;
+}
+
+.job-info{
+    display:flex;
+    gap:25px;
+    color:#6b7280;
+    margin-bottom:18px;
+    flex-wrap:wrap;
+}
+
+.job-footer{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.view-btn{
+    background:#2563eb;
+    color:#fff;
+    border:none;
+    padding:10px 22px;
+    border-radius:30px;
+    font-weight:600;
+}
+
+.view-btn:hover{
+    background:#1d4ed8;
+}
+
+.applied{
+    color:#16a34a;
+    font-weight:600;
+    margin-right:15px;
+}
+
+.saved{
+    color:#2563eb;
+    font-weight:600;
+}
+
+
+.spec-card{
+    background:#fff;
+    border-radius:18px;
+    padding:25px;
+    text-align:center;
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+    transition:.3s;
+    border:1px solid #eef2ff;
+    height:100%;
+}
+
+.spec-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 18px 40px rgba(37,99,235,.18);
+}
+
+.spec-icon{
+    font-size:28px;
+    color:#2563eb;
+    margin-bottom:15px;
+}
+
+.spec-card h6{
+    font-weight:700;
+    color:#111827;
+    margin-bottom:8px;
+}
+
+.spec-card p{
+    margin:0;
+    color:#6b7280;
+    font-weight:500;
+}
+
+}
+
+
+

@@ -1,0 +1,226 @@
+/* ==========================================
+           GOOGLE FONTS
+========================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap');
+
+/* ==========================================
+              RESET
+========================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:'Inter',sans-serif;
+
+    background:#F8FAFC;
+
+    color:#1E293B;
+
+    overflow-x:hidden;
+
+}
+
+a{
+
+    text-decoration:none;
+
+}
+
+img{
+
+    width:100%;
+
+    display:block;
+
+}
+
+ul{
+
+    list-style:none;
+
+}
+
+/* ==========================================
+              VARIABLES
+========================================== */
+
+:root{
+
+    --primary:#2563EB;
+    --secondary:#0F172A;
+    --accent:#F59E0B;
+
+    --white:#ffffff;
+
+    --gray:#64748B;
+
+    --bg:#F8FAFC;
+
+    --success:#16A34A;
+
+    --danger:#DC2626;
+
+    --radius:18px;
+
+    --transition:.35s ease;
+
+    --shadow:
+    0 15px 35px rgba(0,0,0,.08);
+
+}
+
+/* ==========================================
+            CONTAINER
+========================================== */
+
+.container{
+
+    width:90%;
+
+    max-width:1280px;
+
+    margin:auto;
+
+}
+
+/* ==========================================
+            SECTION
+========================================== */
+
+section{
+
+    padding:100px 0;
+
+}
+
+.section-title{
+
+    font-size:42px;
+
+    font-weight:700;
+
+    font-family:'Poppins',sans-serif;
+
+    color:var(--secondary);
+
+}
+
+.section-subtitle{
+
+    margin-top:15px;
+
+    color:var(--gray);
+
+    font-size:18px;
+
+}
+
+/* ==========================================
+            BUTTONS
+========================================== */
+
+.btn-main{
+
+    display:inline-block;
+
+    padding:15px 38px;
+
+    background:var(--primary);
+
+    color:white;
+
+    border-radius:50px;
+
+    transition:.3s;
+
+    font-weight:600;
+
+}
+
+.btn-main:hover{
+
+    background:var(--secondary);
+
+    transform:translateY(-4px);
+
+}
+
+.btn-outline{
+
+    display:inline-block;
+
+    padding:15px 38px;
+
+    border:2px solid var(--primary);
+
+    color:var(--primary);
+
+    border-radius:50px;
+
+    transition:.3s;
+
+}
+
+.btn-outline:hover{
+
+    background:var(--primary);
+
+    color:white;
+
+}
+
+/* ==========================================
+              CARD
+========================================== */
+
+.card-ui{
+
+    background:white;
+
+    border-radius:20px;
+
+    box-shadow:var(--shadow);
+
+    transition:.3s;
+
+}
+
+.card-ui:hover{
+
+    transform:translateY(-8px);
+
+}
+
+/* ==========================================
+            SCROLLBAR
+========================================== */
+
+::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#2563EB;
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#EEF2FF;
+
+}

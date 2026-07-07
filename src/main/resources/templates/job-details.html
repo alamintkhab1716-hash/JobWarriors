@@ -20,7 +20,7 @@
 
 <header class="navbar navbar-expand-lg navbar-dark">
     <label class="mt-2 ms-5 font-weight-bold h5"
-    ><a href="/">FreshersJobs</a
+    ><a th:href="@{/dashboard/}">JobWarriors</a>
     ><span class="logo_com font-weight-bold h5" style="color: white">
           .com</span
     ></label
@@ -98,38 +98,61 @@
                 Results </a>
             <h1 class="primary-title mt-3"> Job Details </h1>
             <div class="ms-3">
-                <h4 th:text="${jobDetails.jobTitle}" class="job-title text-left">Software Engineer</h4>
+                <h2 class="job-title fw-bold"
+                    th:text="${jobDetails.jobTitle}">
+                </h2>Software Engineer</h4>
                 <div class="mt-1">
                     <p th:text="${jobDetails.jobLocationId.city+', '+ jobDetails.jobLocationId.state}"
                        class="m-0"> California, USA</p>
-                    <p th:text="${jobDetails.jobCompanyId.name}">Company</p>
-                </div>
+                    <p class="company-name"
+                       th:text="${jobDetails.jobCompanyId.name}">
+                    </p> </div>
             </div>
         </div>
 
         <div class="box mt-3">
             <label class="large-label px-3 mt-3"> Job Specs </label>
 
-            <div class="job-row">
-                <div class="row ">
-                    <div class="col-md-3">
-                        <label class="text-left">Date Posted:<span
-                                th:text="${jobDetails.postedDate}">12 Nov, 2030</span></label>
-                    </div>
-                    <div class="col-md-3 text-center">
-                        <label> Salary: <span th:text="${jobDetails.salary}">50k - 120k/y</span></label>
-                    </div>
-                    <div class="col-md-3 text-center">
-                        <label>Type: <span th:text="${jobDetails.jobType}"> Full-time</span></label>
-                    </div>
-                    <div class="col-md-3 text-right">
-                        <label>Remote: <span th:text="${jobDetails.remote}">Remote</span></label>
+            <div class="row g-4 mt-2">
+
+                <div class="col-md-3">
+                    <div class="spec-card">
+                        <i class="fa-solid fa-calendar-days spec-icon"></i>
+                        <h6>Date Posted</h6>
+                        <p th:text="${#dates.format(jobDetails.postedDate,'dd MMM yyyy')}"></p>
                     </div>
                 </div>
+
+                <div class="col-md-3">
+                    <div class="spec-card">
+                        <i class="fa-solid fa-indian-rupee-sign spec-icon"></i>
+                        <h6>Salary</h6>
+                        <p th:text="${jobDetails.salary}"></p>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="spec-card">
+                        <i class="fa-solid fa-briefcase spec-icon"></i>
+                        <h6>Job Type</h6>
+                        <p th:text="${jobDetails.jobType}"></p>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="spec-card">
+                        <i class="fa-solid fa-house spec-icon"></i>
+                        <h6>Work Mode</h6>
+                        <p th:text="${jobDetails.remote}"></p>
+                    </div>
+                </div>
+
             </div>
 
             <div class="px-3 mb-3" sec:authorize="hasAuthority('Job Seeker')">
-                <label class="large-label "> Job Description </label>
+                <h3 class="large-label mb-4">
+                    📄 Job Description
+                </h3>
                 <div th:utext="${jobDetails.descriptionOfJob}"></div>
             </div>
 
@@ -181,18 +204,38 @@
             </div>
 
             <div class="mt-3 px-3" sec:authorize="hasAuthority('Recruiter')">
+
                 <div class="row">
+
                     <div class="col-md-3">
-                        <form th:action="@{/dashboard/edit/{id}(id=${jobDetails.jobPostId})}" method="post">
-                            <button class="btn-sec btn-red w-100" type="submit">Edit Job</button>
-                        </form>
+
+                        <a th:href="@{/dashboard/edit/{id}(id=${jobDetails.jobPostId})}"
+                           class="btn btn-warning w-100">
+
+                            Edit Job
+
+                        </a>
+
                     </div>
+
                     <div class="col-md-3">
-                        <form th:action="@{/dashboard/deleteJob/{id}(id=${jobDetails.jobPostId})}" method="post">
-                            <button class="btn-sec btn-black w-100" type="submit">Delete Job</button>
+
+                        <form th:action="@{/dashboard/deleteJob/{id}(id=${jobDetails.jobPostId})}"
+                              method="post">
+
+                            <button class="btn btn-dark w-100"
+                                    type="submit">
+
+                                Delete Job
+
+                            </button>
+
                         </form>
+
                     </div>
+
                 </div>
+
             </div>
         </div>
 

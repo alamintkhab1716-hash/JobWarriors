@@ -26,38 +26,37 @@
 </head>
 
 <body>
-<div class="row" style="margin-right:0; ">
-    <div class="col-5 coffee_mug_background">
-        <div class="logo_left mt-3 pt-4 ms-5 pl-5">
-            <h2 class="logo" style="color: white">
-                FreshersJobs <span class="logo_com">.com</span>
-            </h2>
-        </div>
-    </div>
-    <div class="col-7">
-        <div class="myForm">
-            <form
-                    th:action="@{/job-seeker-profile/addNew}"
-                    th:object="${profile}"
-                    method="post"
-                    enctype="multipart/form-data"
-            >
-                <div class="row" style="margin-right:0; margin-left:0;">
-                    <div class="col-md-12">
-                        <div class="d-flex justify-content-center pt-3">
-                            <h1 class="heading_font font-weight-bold">Candidate</h1>
-                        </div>
-                    </div>
-                    <div class="col-md-12">
-                        <div>
-                            <h2 class="heading_font d-flex justify-content-center">
-                                Set up your Profile
-                            </h2>
-                        </div>
-                    </div>
-                    <div class="col-md-12">
-                        <label class="heading_font font_sub_heading_color">Name</label>
-                        <div class="row">
+
+<div class="container py-5">
+
+    <div class="myForm">
+
+        <form
+                th:action="@{/job-seeker-profile/addNew}"
+                th:object="${profile}"
+                method="post"
+                enctype="multipart/form-data">
+
+            <div class="row">
+
+                <div class="col-12 text-center mb-5">
+
+                    <h1 class="fw-bold display-5">
+                        Candidate Profile
+                    </h1>
+
+                    <p class="text-muted">
+                        Complete your professional profile
+                    </p>
+
+                </div>
+                <div class="col-12">
+
+                    <h4 class="mb-4 fw-bold">
+                        Basic Information
+                    </h4>
+
+                    <div class="row">
                             <div class="col-md-6 pr-1">
                                 <input
 
@@ -68,22 +67,22 @@
                                         hidden
                                 />
                                 <input
-                                        placeholder="First Name"
                                         id="firstName"
                                         th:field="*{firstName}"
-                                        name="firstName"
                                         type="text"
-                                        class="form-control"
+                                        class="form-control mb-3"
+                                        placeholder="First Name"
+                                        required
                                 />
                             </div>
                             <div class="col-md-6 pl-1">
                                 <input
-                                        placeholder="Last Name"
                                         id="lastName"
-                                        name="lastName"
                                         th:field="*{lastName}"
                                         type="text"
-                                        class="form-control"
+                                        class="form-control mb-3"
+                                        placeholder="Last Name"
+                                        required
                                 />
                             </div>
                         </div>
@@ -199,7 +198,7 @@
                                 <div class="text-left mt-2">
                                     <button
                                             type="button"
-                                            class="btn btn-outline-secondary"
+                                            class="btn btn-primary rounded-pill px-4"
                                             id="addSkill"
                                     >
                                         Add Skill
@@ -249,9 +248,11 @@
                                         type="submit"
                                         id="submit2"
                                         name="submit"
-                                        class="btn btn-primary base_button px-4 py-2"
-                                >
-                                    Save
+                                        class="btn btn-primary px-5 py-3 rounded-pill fw-bold">
+
+                                    <i class="fa-solid fa-floppy-disk me-2"></i>
+                                    Save Profile
+
                                 </button>
                             </div>
                         </div>

@@ -18,131 +18,254 @@
 </head>
 
 <body>
+
 <header class="navbar navbar-expand-lg navbar-dark">
-    <label class="mt-2 ms-5 font-weight-bold h5"
-    ><a th:href="@{/dashboard/}">FreshersJobs</a
-    ><span class="logo_com font-weight-bold h5" style="color: white">
-          .com</span
-    ></label
-    >
-    <button
-            class="navbar-toggler"
-            type="button"
-            data-toggle="collapse"
-            data-target="#navbarTogglerDemo02"
-            aria-controls="navbarTogglerDemo02"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-    >
-        <span class="navbar-toggler-icon"></span>
-    </button>
 
-    <div class="collapse navbar-collapse" id="navbarToggler">
-        <ul class="navbar-nav m-auto mt-2 mt-lg-0">
+    <div class="container-fluid px-5">
 
-            <li class="nav-item ">
-                <a sec:authorize="hasAuthority('Job Seeker')" class="nav-link" th:href="@{/dashboard/}"
-                ><i class="fas fa-search"></i>Search for Jobs</a
-                >
-            </li>
-            <li class="nav-item active">
-                <a sec:authorize="hasAuthority('Job Seeker')" class="nav-link" th:href="@{/saved-jobs/}">
-                    <i class="fa-solid fa-eye"></i>View Saved Jobs</a>
-            </li>
-            <li class="nav-item ">
-                <a sec:authorize="hasAuthority('Job Seeker')" class="nav-link" th:href="@{/job-seeker-profile/}">
-                    <i class="fa-solid fa-pencil"></i>Edit Profile</a>
-            </li>
-        </ul>
-        <img
-                class="rounded-circle me-3"
-                height="50px"
-                width="50x"
-                th:if="${user.photosImagePath!=null}"
-                th:src="@{${user?.photosImagePath}}"
-        />
-        <label th:if="${user.firstName != null && user.lastName != null}"
-               th:text="${user.firstName+' '+user.lastName}"
-               class="nav-item nav-link px-2 me-3">
-        </label>
+        <a class="navbar-brand fw-bold" th:href="@{/dashboard/}">
+            JobWarriors
+        </a>
 
-        <button class="myBtn-light me-5" onclick="window.location.href='/logout'">Logout</button>
-    </div>
-</header>
-<section class="section">
-    <div class="sidenav px-5">
-        <div sec:authorize="hasAuthority('Job Seeker')">
-            <hr/>
+        <button class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarNav">
+
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+        <div class="collapse navbar-collapse"
+             id="navbarNav">
+
+            <ul class="navbar-nav mx-auto">
+
+                <li class="nav-item">
+
+                    <a class="nav-link"
+                       th:href="@{/dashboard/}">
+
+                        <i class="fa fa-search"></i>
+
+                        Search Jobs
+
+                    </a>
+
+                </li>
+
+                <li class="nav-item">
+
+                    <a class="nav-link active"
+                       th:href="@{/saved-jobs/}">
+
+                        <i class="fa fa-bookmark"></i>
+
+                        Saved Jobs
+
+                    </a>
+
+                </li>
+
+                <li class="nav-item">
+
+                    <a class="nav-link"
+                       th:href="@{/job-seeker-profile/}">
+
+                        <i class="fa fa-user"></i>
+
+                        Profile
+
+                    </a>
+
+                </li>
+
+            </ul>
+
+            <div class="d-flex align-items-center">
+
+                <img
+                        th:if="${user.photosImagePath!=null}"
+                        th:src="@{${user.photosImagePath}}"
+                        class="rounded-circle me-3"
+                        width="45"
+                        height="45">
+
+                <span class="me-4 fw-semibold"
+                      th:text="${user.firstName+' '+user.lastName}">
+                </span>
+
+                <a th:href="@{/logout}"
+                   class="btn btn-outline-light">
+
+                    Logout
+
+                </a>
+
+            </div>
 
         </div>
+
     </div>
+
+</header>
+
+<section class="section">
+
+    <aside class="sidenav">
+
+    </aside>
 
     <article>
 
         <div class="box">
-            <h1 class="primary-title">Saved Jobs</h1>
+
+            <h1 class="primary-title">
+
+                ⭐ Saved Jobs
+
+            </h1>
+
+            <p class="text-muted">
+
+                Jobs you saved for later.
+
+            </p>
+
         </div>
 
-        <div class="box mt-3">
-            <label class="large-label px-3 mb-3">Results</label>
-            <th:block th:each="jobPost:${jobPost}">
+        <div class="box mt-4">
+
+            <label class="large-label">
+
+                Saved Jobs
+
+            </label>
+            <th:block th:each="jobPost : ${jobPost}">
+
                 <a th:href="@{/job-details-apply/{id}(id=${jobPost.jobPostId})}"
-                   style=" text-decoration:none; color:black;">
-                    <div onclick="window.location=/job-details-apply/{id}(id=${jobPost.jobPostId})" class="job-row">
-                        <div class="row ">
-                            <div class="col-md-4">
-                                <label class="job-title text-left">
-                                    [[${jobPost.jobTitle}]]
-                                    <span class="title-span" sec:authorize="hasAuthority('Recruiter')"
-                                          th:text="'('+ @{${jobPost.totalCandidates}}+' Candidates Applied)'">(xx candidates applied)</span>
-                                    <span class="title-span" sec:authorize="hasAuthority('Job Seeker')"
-                                          th:if="${jobPost.isActive == true}">(Applied)</span>
+                   class="job-card-link">
 
-                                </label>
+                    <div class="job-card">
+
+                        <!-- LEFT -->
+                        <div class="job-left">
+
+                            <div class="company-logo">
+                                <i class="fa-solid fa-building"></i>
                             </div>
-                            <div class="col-md-4 text-center">
-                                <label th:text="${jobPost.jobLocationId.city+', '+ jobPost.jobLocationId.state}">
-                                    City State</label>
+
+                            <div class="job-content">
+
+                                <h3 class="job-title"
+                                    th:text="${jobPost.jobTitle}">
+                                </h3>
+
+                                <p class="company-name"
+                                   th:text="${jobPost.jobCompanyId.name}">
+                                </p>
+
+                                <div class="job-info">
+
+                        <span>
+                            <i class="fa-solid fa-location-dot"></i>
+
+                            <span th:text="${jobPost.jobLocationId.city}"></span>,
+                            <span th:text="${jobPost.jobLocationId.state}"></span>
+
+                        </span>
+
+                                    <span>
+
+                            <i class="fa-solid fa-briefcase"></i>
+
+                            <span th:text="${jobPost.jobType}"></span>
+
+                        </span>
+
+                                    <span>
+
+                            <i class="fa-solid fa-house"></i>
+
+                            <span th:text="${jobPost.remote}"></span>
+
+                        </span>
+
+                                </div>
+
+                                <div class="mt-3">
+
+                        <span class="salary-badge">
+
+                            ₹ <span th:text="${jobPost.salary}"></span>
+
+                        </span>
+
+                                </div>
+
                             </div>
-                            <div class="col-md-4 text-right">
-                                <label th:text="@{${jobPost.jobCompanyId.name}}">Recruiter Company Name</label>
-                            </div>
+
                         </div>
+
+                        <!-- RIGHT -->
+
+                        <div class="job-right">
+
+                            <small class="text-muted"
+                                   th:text="${#dates.format(jobPost.postedDate,'dd MMM yyyy')}">
+                            </small>
+
+                            <a th:href="@{/job-details-apply/{id}(id=${jobPost.jobPostId})}"
+                               class="view-btn">
+                                View Details →
+                            </a>
+
+                            <div>
+
+                    <span class="applied"
+                          th:if="${jobPost.isActive}">
+                        ✓ Applied
+                    </span>
+
+                                <span class="saved"
+                                      th:if="${jobPost.isSaved}">
+                        ★ Saved
+                    </span>
+
+                            </div>
+
+                        </div>
+
                     </div>
+
                 </a>
+
             </th:block>
-        </div>
+        </div> <!-- box -->
 
     </article>
 
-
 </section>
 
-<!--/ bradcam_area  -->
-
-
 <script
         type="text/javascript"
-        th:src="@{/webjars/jquery/jquery.min.js}"
-></script>
-<script
-        type="text/javascript"
-        th:src="@{/webjars/popper.js/umd/popper.min.js}"
-></script>
-<script
-        type="text/javascript"
-        th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"
-></script>
-<script type="text/javascript" th:src="@{/js/main.js}"></script>
-
-<script>
-
-    $('#job').change(function() {
-      $('#hidJob').val($(this).val());
-    });
-    $('#loc').change(function() {
-      $('#hidLoc').val($(this).val());
-    });
+        th:src="@{/webjars/jquery/jquery.min.js}">
 </script>
+
+<script
+        type="text/javascript"
+        th:src="@{/webjars/popper.js/umd/popper.min.js}">
+</script>
+
+<script
+        type="text/javascript"
+        th:src="@{/webjars/bootstrap/js/bootstrap.min.js}">
+</script>
+
+<script
+        type="text/javascript"
+        th:src="@{/js/main.js}">
+</script>
+
 </body>
 </html>

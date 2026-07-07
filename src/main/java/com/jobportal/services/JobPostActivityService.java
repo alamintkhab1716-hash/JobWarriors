@@ -5,6 +5,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+import com.jobportal.repository.JobSeekerSaveRepository;
+import jakarta.transaction.Transactional;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.jobportal.entity.IRecruiterJobs;
@@ -13,9 +16,18 @@ import com.jobportal.entity.JobLocation;
 import com.jobportal.entity.JobPostActivity;
 import com.jobportal.entity.RecruiterJobsDto;
 import com.jobportal.repository.JobPostActivityRepository;
+import com.jobportal.repository.JobSeekerApplyRepository;
+import com.jobportal.repository.JobSeekerApplyRepository;
+
 
 @Service
 public class JobPostActivityService {
+
+@Autowired
+private JobSeekerApplyRepository jobSeekerApplyRepository;
+
+   @Autowired
+    private JobSeekerSaveRepository jobSeekerSaveRepository;
 
     private final JobPostActivityRepository jobPostActivityRepository;
 
@@ -54,5 +66,15 @@ public class JobPostActivityService {
     public List<JobPostActivity> search(String job, String location, List<String> type, List<String> remote, LocalDate searchDate) {
         return Objects.isNull(searchDate) ? jobPostActivityRepository.searchWithoutDate(job, location, remote,type) :
                 jobPostActivityRepository.search(job, location, remote, type, searchDate);
+    }
+
+    @Transactional
+    public void deleteJob(int id) {
+
+        jobSeekerApplyRepository.deleteByJobId(id);
+
+        jobSeekerSaveRepository.deleteByJobId(id);
+
+        jobPostActivityRepository.deleteById(id);
     }
 }

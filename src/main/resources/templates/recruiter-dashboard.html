@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1">
+
+    <title>Recruiter Dashboard</title>
+
+    <link rel="stylesheet"
+          th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
+
+    <link rel="stylesheet"
+          th:href="@{/webjars/font-awesome/css/all.css}">
+
+    <link rel="stylesheet"
+          th:href="@{/css/styles.css}">
+
+</head>
+
+<body>
+
+<header class="navbar navbar-expand-lg navbar-dark">
+
+    <div class="container-fluid px-5">
+
+        <a class="navbar-brand fw-bold"
+           th:href="@{/dashboard/}">
+
+            JobWarriors
+
+        </a>
+
+        <button class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarNav">
+
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+        <div class="collapse navbar-collapse"
+             id="navbarNav">
+
+            <ul class="navbar-nav mx-auto">
+
+                <li class="nav-item">
+
+                    <a class="nav-link active"
+                       th:href="@{/dashboard/}">
+
+                        <i class="fa-solid fa-briefcase me-2"></i>
+
+                        My Jobs
+
+                    </a>
+
+                </li>
+
+                <li class="nav-item">
+
+                    <a class="nav-link"
+                       th:href="@{/dashboard/add}">
+
+                        <i class="fa-solid fa-plus me-2"></i>
+
+                        Post Job
+
+                    </a>
+
+                </li>
+
+                <li class="nav-item">
+
+                    <a class="nav-link"
+                       th:href="@{/recruiter-profile/}">
+
+                        <i class="fa-solid fa-user me-2"></i>
+
+                        Profile
+
+                    </a>
+
+                </li>
+
+            </ul>
+
+            <div class="d-flex align-items-center">
+
+                <img th:if="${user.profilePhoto!=null}"
+                     th:src="@{${user.photosImagePath}}"
+                     class="rounded-circle me-3"
+                     width="45"
+                     height="45">
+
+                <span th:text="${user.company}"></span>
+
+                <form th:action="@{/logout}" method="post" class="ms-3">
+
+                    <button type="submit"
+                            class="btn btn-light rounded-pill px-4 fw-semibold">
+
+                        Logout
+
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</header>
+
+<section class="section">
+
+    <aside class="sidenav">
+
+        <div class="text-center">
+
+            <i class="fa-solid fa-building fa-3x text-primary mb-3"></i>
+
+            <h4 class="fw-bold">
+
+                Recruiter Panel
+
+            </h4>
+
+            <p class="text-muted">
+
+                Manage your posted jobs
+
+            </p>
+
+        </div>
+
+        <hr>
+
+        <a class="btn btn-primary w-100 mb-3"
+           th:href="@{/dashboard/add}">
+
+            + Post New Job
+
+        </a>
+
+    </aside>
+
+    <article>
+
+        <div class="box">
+
+            <h1 class="primary-title">
+
+                My Posted Jobs
+
+            </h1>
+
+            <p class="text-muted">
+
+                Manage all your active job postings.
+
+            </p>
+
+        </div>
+
+        <div class="box mt-4">
+
+            <label class="large-label mb-4">
+
+                Posted Jobs
+
+            </label>
+
+            <th:block th:each="jobPost : ${jobPost}">
+
+                <div class="job-card">
+
+                    <!-- LEFT -->
+
+                    <div class="job-left">
+
+                        <div class="company-logo">
+
+                            <i class="fa-solid fa-building"></i>
+
+                        </div>
+
+                        <div class="job-content">
+
+                            <h3 class="job-title"
+                                th:text="${jobPost.jobTitle}">
+                            </h3>
+
+                            <p class="company-name"
+                               th:text="${jobPost.jobCompanyId.name}">
+                            </p>
+
+                            <div class="job-info">
+
+                    <span>
+
+                        <i class="fa-solid fa-location-dot"></i>
+
+                        <span th:text="${jobPost.jobLocationId.city}"></span>,
+
+                        <span th:text="${jobPost.jobLocationId.state}"></span>
+
+                    </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <!-- RIGHT -->
+
+                    <div class="job-right">
+
+            <span class="salary-badge">
+
+                <i class="fa-solid fa-users me-2"></i>
+
+                <span th:text="${jobPost.totalCandidates}"></span>
+
+                Applicants
+
+            </span>
+
+                        <div class="mt-4">
+
+                            <a th:href="@{/job-details-apply/{id}(id=${jobPost.jobPostId})}"
+                               class="view-btn">
+
+                                <i class="fa-solid fa-eye me-2"></i>
+
+                                View
+
+                            </a>
+
+
+
+
+
+                            <a th:href="@{/dashboard/edit/{id}(id=${jobPost.jobPostId})}"
+                               class="btn btn-warning">
+
+                                <i class="fa-solid fa-pen"></i>
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </th:block>
+        </div> <!-- box -->
+
+    </article>
+
+</section>
+
+<script
+        th:src="@{/webjars/jquery/jquery.min.js}">
+</script>
+
+<script
+        th:src="@{/webjars/popper.js/umd/popper.min.js}">
+</script>
+
+<script
+        th:src="@{/webjars/bootstrap/js/bootstrap.min.js}">
+</script>
+
+<script
+        th:src="@{/js/main.js}">
+</script>
+
+</body>
+
+</html>

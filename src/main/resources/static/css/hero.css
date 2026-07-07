@@ -1,0 +1,24 @@
+.hero {
+    background: linear-gradient(rgba(37,99,235,0.1), rgba(15,23,42,0.1)), url('/images/hero-bg.jpg') center/cover no-repeat;
+    min-height: 90vh;
+    color: #0F172A;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.hero h1 {
+    font-family: 'Poppins', sans-serif;
+}
+.search-bar .form-control {
+    border: none;
+    padding: 1rem;
+}
+.search-bar .btn {
+    border-radius: 0 50px 50px 0;
+}
+
+.hero{
+
+    padding:70px 0;
+
+}

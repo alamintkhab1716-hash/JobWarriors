@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.DeepakSingh</groupId>
-	<artifactId>jobportal</artifactId>
+	<artifactId>JobWarriors</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>Job Portal</name>
 	<description>Spring Boot 3 Project Job Portal Using Spring MVC, Thymeleaf, Spring Security, JPA, Hibernate and MySQL</description>
