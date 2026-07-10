@@ -61,7 +61,7 @@ The project follows modern backend development practices including layered archi
 
 ## 🗄 Database
 
-* PostgreSQL Integration
+* My Sql
 * Spring Data JPA
 * Hibernate ORM
 * Entity Relationships
@@ -89,7 +89,7 @@ The project follows modern backend development practices including layered archi
 
 ### Database
 
-* PostgreSQL
+* My Sql
 
 ### Tools
 
@@ -161,8 +161,8 @@ Update the following properties:
 
 ```properties
 spring.datasource.url=jdbc:postgresql://localhost:5432/jobwarriors
-spring.datasource.username=YOUR_USERNAME
-spring.datasource.password=YOUR_PASSWORD
+spring.datasource.username=******
+spring.datasource.password=*****
 ```
 
 ## Run the Application
