@@ -2,250 +2,129 @@
 
 <div align="center">
 
-### A Full-Stack Job Portal Application built with Spring Boot & PostgreSQL
+## 🚀 Modern Job Portal Platform
 
-*Connecting talented job seekers with recruiters through a secure and modern recruitment platform.*
+A Full Stack Job Portal built using Spring Boot, Spring Security, Thymeleaf & MySQL.
 
-![Java](https://img.shields.io/badge/Java-21-orange?style=for-the-badge\&logo=openjdk)
-![Spring Boot](https://img.shields.io/badge/Spring_Boot-3.x-6DB33F?style=for-the-badge\&logo=springboot)
-![Spring Security](https://img.shields.io/badge/Spring_Security-6.x-6DB33F?style=for-the-badge\&logo=springsecurity)
-![MySQL](https://img.shields.io/badge/MySQL-8.0-4479A1?style=for-the-badge&logo=mysql)
-![Thymeleaf](https://img.shields.io/badge/Thymeleaf-3.1-005F0F?style=for-the-badge\&logo=thymeleaf)
-![Maven](https://img.shields.io/badge/Maven-Build-C71A36?style=for-the-badge\&logo=apachemaven)
+![Java](https://img.shields.io/badge/Java-21-orange?style=for-the-badge&logo=openjdk)
+![Spring Boot](https://img.shields.io/badge/Spring_Boot-6DB33F?style=for-the-badge&logo=springboot)
+![Spring Security](https://img.shields.io/badge/Spring_Security-6DB33F?style=for-the-badge&logo=springsecurity)
+![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql)
+![Hibernate](https://img.shields.io/badge/Hibernate-59666C?style=for-the-badge&logo=hibernate)
+![Thymeleaf](https://img.shields.io/badge/Thymeleaf-005F0F?style=for-the-badge&logo=thymeleaf)
 
 </div>
 
 ---
 
-# 📖 About the Project
+# 📖 Overview
 
-**JobWarriors** is a full-stack Job Portal application developed using **Spring Boot**, **Spring Security**, **Thymeleaf**, and **My SQL**.
-The platform enables **Job Seekers** to explore job opportunities, upload resumes, and apply for positions, while allowing **Recruiters** to securely manage job postings through a dedicated dashboard.
+JobWarriors is a full-stack recruitment platform designed to simplify the hiring process for both recruiters and job seekers.
 
-The project follows modern backend development practices including layered architecture, authentication & authorization, RESTful APIs, database integration, and secure user management.
+The application provides secure authentication, resume management, job posting, job search, and application tracking using a clean and responsive user interface.
+
+Built using Spring Boot's layered architecture, the project demonstrates backend development concepts including authentication, REST APIs, database management, and role-based authorization.
 
 ---
 
 # ✨ Features
 
-## 🔐 Authentication
+## 👨‍🎓 Job Seeker
 
-* Secure Login & Registration
-* Spring Security Authentication
-* Password Encryption
-* Role-Based Authorization
+✔ Register & Login
 
-## 👨‍💼 Recruiter Module
+✔ Search Jobs
 
-* Recruiter Dashboard
-* Create Job Posts
-* Update Existing Jobs
-* Delete Job Posts
-* Manage Posted Jobs
+✔ Apply for Jobs
 
-## 👨‍🎓 Job Seeker Module
+✔ Upload Resume
 
-* Browse Available Jobs
-* Search Jobs
-* View Job Details
-* Apply for Jobs
-* Upload Resume
+✔ Save Jobs
 
-## 🌐 REST APIs
+✔ Manage Profile
 
-* RESTful Backend APIs
-* CRUD Operations
-* JSON Data Exchange
-* API-ready Backend Architecture
+✔ Filter Jobs
 
-## 🗄 Database
+---
 
-* My Sql
-* Spring Data JPA
-* Hibernate ORM
-* Entity Relationships
+## 👨‍💼 Recruiter
+
+✔ Secure Login
+
+✔ Recruiter Dashboard
+
+✔ Create Job
+
+✔ Update Job
+
+✔ Delete Job
+
+✔ View Applicants
+
+---
+
+## 🔐 Security
+
+✔ Spring Security
+
+✔ Role Based Authorization
+
+✔ BCrypt Password Encryption
+
+✔ Session Authentication
+
+---
+
+## 🌐 Backend
+
+✔ REST APIs
+
+✔ Spring MVC
+
+✔ Hibernate
+
+✔ Spring Data JPA
+
+✔ MySQL
 
 ---
 
 # 🛠 Tech Stack
 
-### Backend
-
-* Java 21
-* Spring Boot
-* Spring MVC
-* Spring Security
-* Spring Data JPA
-* Hibernate
-
-### Frontend
-
-* Thymeleaf
-* HTML5
-* CSS3
-* Bootstrap
-* JavaScript
-
-### Database
-
-* My Sql
-
-### Tools
-
-* IntelliJ IDEA
-* Git
-* GitHub
-* Maven
-* Postman
+| Backend | Frontend | Database | Tools |
+|----------|-----------|------------|----------|
+| Java | HTML | MySQL | Git |
+| Spring Boot | CSS | Hibernate | GitHub |
+| Spring MVC | Bootstrap | Spring Data JPA | IntelliJ |
+| Spring Security | JavaScript | | Maven |
+| REST API | Thymeleaf | | Postman |
 
 ---
 
 # 🏗 Architecture
 
-```text
-Client (Browser)
-        │
-        ▼
-Spring MVC Controllers
-        │
-        ▼
+Browser
+
+↓
+
+Spring Security
+
+↓
+
+Controllers
+
+↓
+
 Service Layer
-        │
-        ▼
-Repository Layer (JPA)
-        │
-        ▼
-PostgreSQL Database
-```
+
+↓
+
+Repository Layer
+
+↓
+
+MySQL Database
 
 ---
 
-# 📂 Project Structure
-
-```text
-src/
-├── main/
-│   ├── java/
-│   │   ├── controller/
-│   │   ├── service/
-│   │   ├── repository/
-│   │   ├── entity/
-│   │   ├── config/
-│   │   └── security/
-│   └── resources/
-│       ├── templates/
-│       ├── static/
-│       └── application.properties
-```
-
----
-
-# ⚙️ Getting Started
-
-## Clone the Repository
-
-```bash
-git clone https://github.com/alamintkhab1716-hash/JobWarriors.git
-```
-
-## Navigate to the Project
-
-```bash
-cd JobWarriors
-```
-
-## Configure PostgreSQL
-
-Update the following properties:
-
-```properties
-spring.datasource.url=jdbc:mysql://localhost:3306/jobwarriors
-spring.datasource.username=******
-spring.datasource.password=*****
-```
-
-## Run the Application
-
-```bash
-mvn spring-boot:run
-```
-
-Application will start at:
-
-```text
-http://localhost:8080
-```
-
----
-
-# 📸 Screenshots
-
-> Add screenshots after deployment.
-
-* Home Page
-* Login Page
-* Registration Page
-* Recruiter Dashboard
-* Job Listings
-* Job Details
-* Resume Upload
-
----
-
-# 🔗 REST API
-
-Example endpoint:
-
-```http
-GET /api/jobs
-```
-
-```http
-POST /api/jobs
-```
-
-```http
-PUT /api/jobs/{id}
-```
-
-```http
-DELETE /api/jobs/{id}
-```
-
----
-
-# 🔒 Security
-
-* Spring Security
-* BCrypt Password Encryption
-* Authentication & Authorization
-* Role-Based Access Control
-
----
-
-# 🚀 Future Enhancements
-
-* Email Notifications
-* Interview Scheduling
-* Company Verification
-* Admin Dashboard
-* Docker Support
-* CI/CD Pipeline
-* Cloud Deployment (AWS / Render)
-
----
-
-# 👨‍💻 Author
-
-**Intkhab Alam**
-
-Backend Developer | Java | Spring Boot | My SQL
-
-GitHub: https://github.com/alamintkhab1716-hash
-
----
-
-## ⭐ Support
-
-If you found this project helpful, please consider giving it a **Star** on GitHub.
-
+# 📸 Application Preview
