@@ -9,7 +9,7 @@
 ![Java](https://img.shields.io/badge/Java-21-orange?style=for-the-badge\&logo=openjdk)
 ![Spring Boot](https://img.shields.io/badge/Spring_Boot-3.x-6DB33F?style=for-the-badge\&logo=springboot)
 ![Spring Security](https://img.shields.io/badge/Spring_Security-6.x-6DB33F?style=for-the-badge\&logo=springsecurity)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-16-336791?style=for-the-badge\&logo=postgresql)
+![MySQL](https://img.shields.io/badge/MySQL-8.0-4479A1?style=for-the-badge&logo=mysql)
 ![Thymeleaf](https://img.shields.io/badge/Thymeleaf-3.1-005F0F?style=for-the-badge\&logo=thymeleaf)
 ![Maven](https://img.shields.io/badge/Maven-Build-C71A36?style=for-the-badge\&logo=apachemaven)
 
