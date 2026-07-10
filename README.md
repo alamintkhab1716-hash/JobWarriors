@@ -267,8 +267,8 @@ Update your `application.properties`:
 
 ```properties
 spring.datasource.url=jdbc:mysql://localhost:3306/jobwarriors
-spring.datasource.username=YOUR_USERNAME
-spring.datasource.password=YOUR_PASSWORD
+spring.datasource.username=****
+spring.datasource.password=****
 ```
 
 ### 4️⃣ Build the Project
