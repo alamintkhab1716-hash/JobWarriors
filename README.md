@@ -19,8 +19,7 @@
 
 # 📖 About the Project
 
-**JobWarriors** is a full-stack Job Portal application developed using **Spring Boot**, **Spring Security**, **Thymeleaf**, and **PostgreSQL**.
-
+**JobWarriors** is a full-stack Job Portal application developed using **Spring Boot**, **Spring Security**, **Thymeleaf**, and **My SQL**.
 The platform enables **Job Seekers** to explore job opportunities, upload resumes, and apply for positions, while allowing **Recruiters** to securely manage job postings through a dedicated dashboard.
 
 The project follows modern backend development practices including layered architecture, authentication & authorization, RESTful APIs, database integration, and secure user management.
@@ -160,7 +159,7 @@ cd JobWarriors
 Update the following properties:
 
 ```properties
-spring.datasource.url=jdbc:postgresql://localhost:5432/jobwarriors
+spring.datasource.url=jdbc:mysql://localhost:3306/jobwarriors
 spring.datasource.username=******
 spring.datasource.password=*****
 ```
@@ -240,7 +239,7 @@ DELETE /api/jobs/{id}
 
 **Intkhab Alam**
 
-Backend Developer | Java | Spring Boot | PostgreSQL
+Backend Developer | Java | Spring Boot | My SQL
 
 GitHub: https://github.com/alamintkhab1716-hash
 
