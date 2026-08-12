@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Create Account | JobWarriors</title>
+
+    <link rel="stylesheet"
+          th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
+
+    <link rel="stylesheet"
+          th:href="@{/css/font-awesome.min.css}">
+
+    <link rel="stylesheet"
+          th:href="@{/css/styles.css}">
+
+    <link rel="stylesheet"
+          th:href="@{/css/main.css}">
+
+</head>
+
+<body>
+
+<div class="container-fluid">
+
+    <div class="row min-vh-100">
+
+        <!-- LEFT SIDE -->
+
+        <div class="col-lg-6 login-left d-none d-lg-flex">
+
+            <div class="overlay">
+
+                <h1 class="display-3 fw-bold mb-4">
+
+                    Build Your Career
+
+                </h1>
+
+                <p class="lead mb-5">
+
+                    Join thousands of candidates who found their dream
+                    job through JobWarriors.
+
+                </p>
+
+                <div class="stats-box">
+
+                    <div class="stat">
+
+                        <h2>10K+</h2>
+
+                        <span>Live Jobs</span>
+
+                    </div>
+
+                    <div class="stat">
+
+                        <h2>850+</h2>
+
+                        <span>Verified Companies</span>
+
+                    </div>
+
+                    <div class="stat">
+
+                        <h2>24×7</h2>
+
+                        <span>Career Support</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- RIGHT SIDE -->
+
+        <div class="col-lg-6 d-flex justify-content-center align-items-center">
+
+            <div class="login-card">
+
+                <h2 class="text-center mb-2">
+
+                    Create Account
+
+                </h2>
+
+                <p class="text-center text-muted mb-4">
+
+                    Register to continue
+
+                </p>
+
+                <form
+                        th:action="@{/register/new}"
+                        th:object="${user}"
+                        method="post">
+
+                    <div class="mb-3">
+
+                        <label class="form-label">
+
+                            Email Address
+
+                        </label>
+
+                        <input
+
+                                type="email"
+
+                                class="form-control"
+
+                                placeholder="Enter Email"
+
+                                th:field="*{email}"
+
+                                required>
+
+                    </div>
+
+                    <div class="mb-3">
+
+                        <label class="form-label">
+
+                            Password
+
+                        </label>
+
+                        <input
+
+                                type="password"
+
+                                class="form-control"
+
+                                placeholder="Enter Password"
+
+                                th:field="*{password}"
+
+                                required>
+
+                    </div>
+
+                    <div class="mb-4">
+
+                        <label class="form-label">
+
+                            Register As
+
+                        </label>
+
+                        <select
+                                class="form-select"
+                                th:field="*{userTypeId}"
+                                required>
+
+                            <th:block th:each="userType : ${getAllTypes}">
+
+                                <option
+                                        th:value="${userType.userTypeId}"
+                                        th:text="${userType.userTypeName}">
+                                </option>
+
+                            </th:block>
+
+                        </select>
+
+                    </div>
+
+                    <button
+                            type="submit"
+                            class="btn btn-primary w-100">
+
+                        Create Account
+
+                    </button>
+
+                </form>
+
+                <p class="text-center mt-4">
+
+                    Already have an account?
+
+                    <a th:href="@{/login}">
+
+                        Login Here
+
+                    </a>
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script
+        th:src="@{/webjars/bootstrap/js/bootstrap.bundle.min.js}">
+</script>
+
+</body>
+
+</html>

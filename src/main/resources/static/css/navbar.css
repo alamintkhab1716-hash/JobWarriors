@@ -1,0 +1,73 @@
+/* ===========================
+        NAVBAR
+=========================== */
+
+.custom-navbar{
+    position: fixed;
+    top:0;
+    left:0;
+    width:100%;
+    background:#ffffff;
+    z-index:999;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.custom-navbar .container{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    height:80px;
+}
+
+.logo{
+    font-size:30px;
+    font-weight:700;
+    color:#2563EB;
+    font-family:'Poppins',sans-serif;
+}
+
+.nav-links{
+    display:flex;
+    gap:35px;
+}
+
+.nav-links a{
+    color:#374151;
+    font-weight:600;
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:#2563EB;
+}
+
+.nav-btns{
+    display:flex;
+    gap:15px;
+}
+
+.login-btn{
+    border:2px solid #2563EB;
+    padding:10px 25px;
+    border-radius:30px;
+    color:#2563EB;
+    transition:.3s;
+}
+
+.login-btn:hover{
+    background:#2563EB;
+    color:white;
+}
+
+.register-btn{
+    background:#2563EB;
+    color:white;
+    padding:10px 25px;
+    border-radius:30px;
+    transition:.3s;
+}
+
+.register-btn:hover{
+    background:#0F172A;
+}
