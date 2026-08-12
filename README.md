@@ -69,6 +69,19 @@ The application uses **Spring Security** for authentication and authorization, *
 * Hibernate ORM
 * MySQL Database
 
+
+
+
+
+## 🎥 Project Demo
+
+🔊 **Watch the complete JobWarriors project walkthrough on LinkedIn.**
+
+The video covers the project architecture, technology stack, authentication and authorization, database interaction, and request flow.
+
+👉 **[Watch Project Demo on LinkedIn](https://lnkd.in/p/gmuU-pqF)**
+
+
 ---
 
 ## 🛠️ Technology Stack
